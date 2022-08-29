@@ -37,6 +37,7 @@ names(eg)
 eg1 <- eg %>%
   rename(temperatura = Median.temperature.anomaly.from.1961.1990.average) %>%
   select(Entity, Year, temperatura) %>%
+  filter(Entity != "Global") %>%
   view()
 
 # Gráficos ---------------------------------------------------------------------------------------------------------------------------------
@@ -44,4 +45,8 @@ eg1 <- eg %>%
 ggplot(eg1, aes(x = Year, y = temperatura, 
                 group = Entity, col = Entity)) +
   geom_point() +
-  geom_line()
+  geom_line() +
+  labs(x = "Tempo (anos)", y = "Temperatura ºC",
+       col = "Regiões") +
+  theme_bw(base_size = 14) +
+  theme(axis.text = element_text(color = "black"))
