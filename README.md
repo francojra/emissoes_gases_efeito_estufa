@@ -2,7 +2,7 @@
 
 #### Autora do script: Jeanne Franco
 #### Data: 28/08/22
-#### Referência: https://ourworldindata.org/deforestation
+#### Referência: https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions
 
 ## Tópicos do script
 
