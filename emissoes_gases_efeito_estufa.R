@@ -1,5 +1,5 @@
 
-# Emissões de gases de efeito estufa -------------------------------------------------------------------------------------------------------
+# Emissões de gases de efeito estufa - Temperatura Mundial ---------------------------------------------------------------------------------
 # Autora do script: Jeanne Franco ----------------------------------------------------------------------------------------------------------
 # Data: 28/08/22 ---------------------------------------------------------------------------------------------------------------------------
 # Referência: https://ourworldindata.org/deforestation -------------------------------------------------------------------------------------
@@ -25,6 +25,7 @@
 # Carregar pacotes necessários -------------------------------------------------------------------------------------------------------------
 
 library(tidyverse)
+library(RColorBrewer)
 
 # Carregar dados ---------------------------------------------------------------------------------------------------------------------------
 
@@ -44,8 +45,9 @@ eg1 <- eg %>%
 
 ggplot(eg1, aes(x = Year, y = temperatura, 
                 group = Entity, col = Entity)) +
-  geom_point() +
-  geom_line() +
+  geom_point(size = 1.8) +
+  geom_line(size = 1) +
+  scale_color_brewer(palette = "Dark2") +
   labs(x = "Tempo (anos)", y = "Temperatura ºC",
        col = "Regiões") +
   theme_bw(base_size = 14) +
