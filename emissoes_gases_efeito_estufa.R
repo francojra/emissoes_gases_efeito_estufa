@@ -38,3 +38,10 @@ eg1 <- eg %>%
   rename(temperatura = Median.temperature.anomaly.from.1961.1990.average) %>%
   select(Entity, Year, temperatura) %>%
   view()
+
+# Gráficos ---------------------------------------------------------------------------------------------------------------------------------
+
+ggplot(eg1, aes(x = Year, y = temperatura, 
+                group = Entity, col = Entity)) +
+  geom_point() +
+  geom_line()
