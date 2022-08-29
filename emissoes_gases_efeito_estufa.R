@@ -46,7 +46,7 @@ eg1 <- eg %>%
 ggplot(eg1, aes(x = Year, y = temperatura, 
                 group = Entity, col = Entity)) +
   geom_point(size = 1.8) +
-  geom_line(size = 1) +
+  geom_line(size = 0.9) +
   scale_color_brewer(palette = "Dark2") +
   labs(x = "Tempo (anos)", y = "Temperatura ºC",
        col = "Regiões") +
