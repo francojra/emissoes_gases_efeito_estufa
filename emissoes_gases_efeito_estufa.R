@@ -21,3 +21,20 @@
 
 ### Para estabelecer o cenário, vamos observar como o planeta tem 
 ### aquecido. 
+
+# Carregar pacotes necessários -------------------------------------------------------------------------------------------------------------
+
+library(tidyverse)
+
+# Carregar dados ---------------------------------------------------------------------------------------------------------------------------
+
+eg <- read.csv("temperature-anomaly.csv")
+view(eg)
+names(eg)
+
+# Manipular e selecionar dados -------------------------------------------------------------------------------------------------------------
+
+eg1 <- eg %>%
+  rename(temperatura = Median.temperature.anomaly.from.1961.1990.average) %>%
+  select(Entity, Year, temperatura) %>%
+  view()
